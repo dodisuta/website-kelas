@@ -1,5 +1,6 @@
 *,
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,9 +12,8 @@ body {
     background-color: #000000;
     text-align: center;
     font-family: 'Ubuntu', sans-serif;
-    color: #ffffff;
     width: 100%;
-    height: 1000vh;
+    height: 10000vh;
 }
 
 .navbar {
@@ -21,16 +21,31 @@ body {
     position: fixed;
     z-index: 9999;
     width: 100%;
+    transition: 0.3s;
+}
+
+h1{
+    padding-bottom: .5rem;
+}
+
+nav.sticky {
+    background: #EEEDEB;
+    padding: 5px 7%;
+    color: #3C3633;
 }
 
 .container-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #fff;
+}
+
+nav.sticky h1 {
+    color: #3C3633;
 }
 
 .container-li {
-    display: flex;
     list-style-type: none;
     text-decoration: none;
 }
@@ -38,7 +53,61 @@ body {
 .container-li a {
     margin: 20px;
     color: #fff;
+    font-weight: 400;
     text-decoration: none;
+    display: inline-block;
+}
+
+.container-li a:hover{
+    color: #EEEDEB;
+}
+
+.container-li a::after{
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid #EEEDEB;
+    transform: scaleX(0);
+    transition: all 0.2s linear;
+}
+
+nav.sticky a::after{
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.2rem solid #3C3633;
+    transform: scaleX(0);
+    transition: all 0.2s linear;
+}
+
+.container-li a:hover::after{
+    transform: scale(1.2);
+}
+
+nav.sticky a {
+    color: #3C3633;
+}
+
+nav.sticky a:hover{
+    color: #000000;
+}
+
+#hamburger {
+    margin-left: 20px;
+    color: #ffffff;
+    display: none;
+}
+
+#hamburger:hover {
+    color: #EEEDEB;
+}
+
+nav.sticky #hamburger {
+    color: #3C3633;
+}
+
+nav.sticky #hamburger:hover{
+    color: #000000;
 }
 
 .home {
@@ -62,7 +131,7 @@ body {
     background: linear-gradient(0deg, #000000 5%, rgba(0, 0, 0, 0.511) 25%);
 }
 
-.container-home{
+.container-home {
     width: 60%;
     padding-top: 400px;
     display: block;
@@ -73,8 +142,133 @@ body {
     z-index: 100;
 }
 
-.header{
+.header {
     font-weight: bold;
     font-size: 300%;
     padding-bottom: 10px;
+}
+
+
+
+
+
+
+/*Media query*/
+
+/*untuk laptop*/
+@media (max-width: 1366px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+/*untuk tablet*/
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    nav.sticky{
+        padding: 15px 7%;
+    }
+
+    .container-li {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #E0CCBE;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .container-li.action {
+        right: 0%;
+    }
+
+    .container-li a{
+        color: #3C3633;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+        text-align: left;
+    }
+
+    .container-li a:hover{
+        color: #3C3633;
+        font-weight: 500;
+    }
+
+    .container-li a::after{
+        transform-origin: 0 0;
+        border-bottom: 0.2rem solid #3C3633;
+    }
+
+    .container-li a:hover::after{
+        transform: scaleX(0.3);
+    }
+
+
+    #hamburger {
+        display: inline-block;
+    }
+}
+
+/*untuk mobile*/
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+
+    
+    nav.sticky{
+        padding: 15px 7%;
+    }
+
+    .container-li {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #E0CCBE;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .container-li.action {
+        right: 0%;
+    }
+
+    .container-li a{
+        color: #3C3633;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+        text-align: left;
+    }
+
+    .container-li a:hover{
+        color: #3C3633;
+        font-weight: 500;
+    }
+
+    .container-li a::after{
+        transform-origin: 0 0;
+        border-bottom: 0.2rem solid #3C3633;
+    }
+
+    .container-li a:hover::after{
+        transform: scaleX(0.3);
+    }
+
+
+    #hamburger {
+        display: inline-block;
+    }
 }
