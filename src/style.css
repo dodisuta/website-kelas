@@ -1,0 +1,267 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  gap: 30;
+}
+
+body {
+  background-color: #000000;
+  /* text-align: center; */
+  font-family: "Ubuntu", sans-serif;
+  width: 100%;
+  height: auto;
+}
+
+.navbar {
+  padding: 20px 7%;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  transition: 0.3s;
+}
+
+h1 {
+  padding-bottom: 0.5rem;
+}
+
+nav.sticky {
+  background: #eeedeb;
+  padding: 5px 7%;
+  color: #3c3633;
+}
+
+.container-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+nav.sticky h1 {
+  color: #3c3633;
+}
+
+.container-li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.container-li a {
+  margin: 20px;
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.container-li a:hover {
+  color: #eeedeb;
+}
+
+.container-li a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid #eeedeb;
+  transform: scaleX(0);
+  transition: all 0.2s linear;
+}
+
+nav.sticky a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.2rem solid #3c3633;
+  transform: scaleX(0);
+  transition: all 0.2s linear;
+}
+
+.container-li a:hover::after {
+  transform: scale(1.2);
+}
+
+nav.sticky a {
+  color: #3c3633;
+}
+
+nav.sticky a:hover {
+  color: #000000;
+}
+
+#hamburger {
+  margin-left: 20px;
+  color: #ffffff;
+  display: none;
+}
+
+#hamburger:hover {
+  color: #eeedeb;
+}
+
+nav.sticky #hamburger {
+  color: #3c3633;
+}
+
+nav.sticky #hamburger:hover {
+  color: #000000;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(../assets/WhatsApp\ Image\ 2024-01-21\ at\ 21.08.43.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.home::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #000000 5%, rgba(0, 0, 0, 0.511) 25%);
+}
+
+.container-home {
+  width: 60%;
+  padding-top: 400px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  z-index: 100;
+}
+
+.header {
+  font-weight: bold;
+  font-size: 300%;
+  padding-bottom: 10px;
+}
+
+/*Media query*/
+
+/*untuk laptop*/
+@media (max-width: 1366px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+/*untuk tablet*/
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger {
+    display: inline-block;
+  }
+
+  nav.sticky {
+    padding: 15px 7%;
+  }
+
+  .container-li {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #e0ccbe;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .container-li.action {
+    right: 0%;
+  }
+
+  .container-li a {
+    color: #3c3633;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .container-li a:hover {
+    color: #3c3633;
+    font-weight: 500;
+  }
+
+  .container-li a::after {
+    transform-origin: 0 0;
+    border-bottom: 0.2rem solid #3c3633;
+  }
+
+  .container-li a:hover::after {
+    transform: scaleX(0.3);
+  }
+}
+
+/*untuk mobile*/
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+
+  nav.sticky {
+    padding: 15px 7%;
+  }
+
+  .container-li {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #e0ccbe;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .container-li.action {
+    right: 0%;
+  }
+
+  .container-li a {
+    color: #3c3633;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .container-li a:hover {
+    color: #3c3633;
+    font-weight: 500;
+  }
+
+  .container-li a::after {
+    transform-origin: 0 0;
+    border-bottom: 0.2rem solid #3c3633;
+  }
+
+  .container-li a:hover::after {
+    transform: scaleX(0.3);
+  }
+
+  #hamburger {
+    display: inline-block;
+  }
+}
